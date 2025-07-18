@@ -58,3 +58,17 @@ yarn-debug.log
 yarn-error.log
 .idea/
 .vscode/
+
+# ─── ASTRO ────────────────────────────────────────────────────────────
+dist/
+.astro/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.env
+.env.production
+.DS_Store
+.idea/
+.pnpm-store

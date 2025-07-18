@@ -1,1 +1,1 @@
-"# Recursos gr†ficos y multimedia" 
+"# Recursos gr√°ficos y multimedia" 
