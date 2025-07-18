@@ -22,15 +22,16 @@ Diseñar una solución tecnológica que permita:
 - firmware/: Firmware del reloj
 - docs/: Documentación
 - assets/: Logos, imágenes, mockups
+- backend/: Django + Django REST Framework
 - README.md: Este archivo.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 
 # 🔧 Tecnologías utilizadas
 
-- **Fronted web:**
-- **Backend web:**
-- **App Móvil:**
+- **Fronted web:** Astro, html, css, boostrap
+- **Backend web:** Django
+- **App Móvil:** Flutter
 - **Firmware:** Arduino / C++
 - **Base de datos:**
 
