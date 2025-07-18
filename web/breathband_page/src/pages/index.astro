@@ -1,5 +1,4 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -7,5 +6,15 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<Welcome />
+	  <header>
+            <div class="container">
+				<img src="public/image-logo.png" alt="BreathBand Logo" class="w-16 h-16" />
+                <p class="logo">BreathBand</p>
+                <nav>
+                    <a href="#BreathBand">BreathBand</a>
+                    <a href="sobre nosotros/sobre.html">Sobre Nosotros</a>
+                    <a href="más información/info.html">Más información</a>
+                </nav>
+            </div>
+    </header>
 </Layout>
