@@ -1,0 +1,96 @@
+---
+// Project.astro
+---
+
+<section
+  class="min-h-[85vh] md:min-h-[80vh] flex items-center justify-center
+         bg-gradient-to-br from-emerald-50 via-green-100 to-teal-50
+         px-4 sm:px-6 lg:px-8 py-20"
+>
+  <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-8 items-center">
+    
+    <!-- ¿Qué es BreathBand? -->
+    <div id=""
+      class="bg-white/60 backdrop-blur-md rounded-3xl shadow-xl p-8 sm:p-12 scroll-element"
+    >
+      <h2 class="text-4xl md:text-5xl font-bold text-emerald-800 mb-6">
+        ¿Qué es <span class="text-[#008618]">BreathBand</span>?
+      </h2>
+      <p class="text-lg md:text-xl text-emerald-700 leading-relaxed">
+        BreathBand es un dispositivo portátil que ayuda a controlar la respiración y reducir la ansiedad. Mide la frecuencia cardíaca y su variabilidad, ofreciendo retroalimentación en tiempo real para respirar mejor y sentirse más tranquilo y centrado.
+      </p>
+      <a
+        href="#mas-info"
+        class="inline-block mt-8 bg-emerald-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-emerald-700 transition"
+      >
+        Descubre más
+      </a>
+    </div>
+
+    <!-- Misión y Visión -->
+    <div class="space-y-8">
+      <div class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 scroll-element">
+        <h3 class="text-2xl font-bold mb-3 text-emerald-800">Misión</h3>
+        <p class="text-emerald-700">
+          Crear tecnología accesible y útil para mejorar la salud mental de las personas en su día a día.
+        </p>
+      </div>
+      <div class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 scroll-element">
+        <h3 class="text-2xl font-bold mb-3 text-emerald-800">Visión</h3>
+        <p class="text-emerald-700">
+          Ser una herramienta global que brinde apoyo real y emocional a millones de personas que viven con ansiedad, mediante tecnología accesible, humana y empática.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12 scroll-element">
+        <h2 class="text-3xl font-bold mb-6 text-center text-emerald-800">Nuestros Valores</h2>
+        <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-emerald-700 font-medium">
+          <li class="bg-emerald-100/70 rounded-2xl py-4">Innovación</li>
+          <li class="bg-emerald-100/70 rounded-2xl py-4">Compromiso</li>
+          <li class="bg-emerald-100/70 rounded-2xl py-4">Empatía</li>
+          <li class="bg-emerald-100/70 rounded-2xl py-4">Accesibilidad</li>
+        </ul>
+    </div>
+
+    <div class="space-y-8">
+      <div class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12 scroll-element">
+        <h3 class="text-2xl font-bold mb-3 text-emerald-800">Motivación</h3>
+        <p class="text-emerald-700">
+          BreathBand nace de esa necesidad de ayudar a las personas que sufren ataques de ansiedad que buscan una solución de apoyo mediante la tecnología
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+    .scroll-element {
+        transform: scale(0);
+        opacity: 0;
+        transition: all 1s;
+    }
+
+    .scroll-element.visible {
+        transform: scale(1);
+        opacity: 1;
+    }
+</style>
+
+<script>
+    window.addEventListener('scroll', function () {
+        const elements = document.querySelectorAll('.scroll-element');
+        elements.forEach(element => {
+            const position = element.getBoundingClientRect();
+            if (position.top < window.innerHeight && position.bottom >= 0) {
+                element.classList.add('visible');
+            } else {
+                element.classList.remove('visible');
+            }
+        });
+    });
+
+    // Para mostrar los elementos al cargar la página si ya están en viewport
+    window.dispatchEvent(new Event('scroll'));
+</script>

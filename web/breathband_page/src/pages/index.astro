@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
+import Project from '../components/Project.astro';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -12,19 +13,11 @@ import Hero from '../components/Hero.astro';
     <Nav />
 
     <Hero />
-    <main class="pt-32 md:pt-0 px-4 sm:px-8 max-w-7xl mx-auto space-y-20">
-        
-      
 
-        
-        <!-- ¿Qué es BreathBand? -->
-        <section class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12">
-            <h2 class="text-3xl font-bold mb-4 text-emerald-800">¿Qué es BreathBand?</h2>
-            <p class="text-emerald-700 leading-relaxed">
-                BreathBand es un dispositivo portátil que ayuda a controlar la respiración y reducir la ansiedad.  
-                Mide la frecuencia cardíaca y su variabilidad, ofreciendo retroalimentación en tiempo real para respirar mejor y sentirse más tranquilo y centrado.
-            </p>
-        </section>
+    <!-- ¿Qué es BreathBand? -->
+    <Project />
+
+    <main class="pt-32 md:pt-0 px-4 sm:px-8 max-w-7xl mx-auto space-y-20">
         
         <!-- ¿Quiénes somos? -->
         <section class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12 flex flex-col md:flex-row items-center gap-8">
@@ -36,31 +29,8 @@ import Hero from '../components/Hero.astro';
               Más de 300 millones de personas en el mundo viven con ansiedad; nosotros también la hemos sentido y queremos ofrecer herramientas accesibles.
             </p>
           </div>
-          <img class="w-full md:w-1/3 rounded-2xl object-cover" src="/placeholder-team.jpg" alt="Equipo BreathBand" />
+          <img class="w-full md:w-1/3 rounded-2xl object-cover" src="public//image-logo2.png" alt="Equipo BreathBand" />
         </section>
-        
-      <!-- Misión y Visión -->
-      <section class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8">
-          <h3 class="text-2xl font-bold mb-3 text-emerald-800">Misión</h3>
-          <p class="text-emerald-700">Crear tecnología accesible y útil para mejorar la salud mental de las personas en su día a día.</p>
-        </div>
-        <div class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8">
-          <h3 class="text-2xl font-bold mb-3 text-emerald-800">Visión</h3>
-          <p class="text-emerald-700">Ayudar a todas las personas con ansiedad a sentirse mejor.</p>
-        </div>
-      </section>
-
-      <!-- Nuestros Valores -->
-      <section class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12">
-        <h2 class="text-3xl font-bold mb-6 text-center text-emerald-800">Nuestros Valores</h2>
-        <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-emerald-700 font-medium">
-          <li class="bg-emerald-100/70 rounded-2xl py-4">Innovación</li>
-          <li class="bg-emerald-100/70 rounded-2xl py-4">Compromiso</li>
-          <li class="bg-emerald-100/70 rounded-2xl py-4">Empatía</li>
-          <li class="bg-emerald-100/70 rounded-2xl py-4">Accesibilidad</li>
-        </ul>
-      </section>
 
       <!-- ¿Qué nos hace diferentes? -->
       <section class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12">
