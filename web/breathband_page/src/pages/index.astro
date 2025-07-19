@@ -4,6 +4,7 @@ import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
 import Project from '../components/Project.astro';
+import Who from '../components/Who.astro';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
@@ -11,56 +12,17 @@ import Project from '../components/Project.astro';
 <Layout>
 
     <Nav />
-
     <Hero />
-
-    <!-- ¿Qué es BreathBand? -->
     <Project />
 
-    <main class="pt-32 md:pt-0 px-4 sm:px-8 max-w-7xl mx-auto space-y-20">
-        
-        <!-- ¿Quiénes somos? -->
-        <section class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12 flex flex-col md:flex-row items-center gap-8">
-          <div class="flex-1">
-            <h2 class="text-3xl font-bold mb-4 text-emerald-800">¿Quiénes somos?</h2>
-            <p class="text-emerald-700 leading-relaxed">
-              Somos dos estudiantes del Colegio Técnico Profesional del Este con deseos de innovar y ayudar con la tecnología.  
-              BreathBand nace de la necesidad de acompañar a quienes sufren ataques de ansiedad.  
-              Más de 300 millones de personas en el mundo viven con ansiedad; nosotros también la hemos sentido y queremos ofrecer herramientas accesibles.
-            </p>
-          </div>
-          <img class="w-full md:w-1/3 rounded-2xl object-cover" src="public//image-logo2.png" alt="Equipo BreathBand" />
-        </section>
+    <main class="pt-32 md:pt-0 px-4 sm:px-8 max-w-7xl mx-auto space-y-20"> 
+        <Who />
 
-      <!-- ¿Qué nos hace diferentes? -->
-      <section class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12">
-        <h2 class="text-3xl font-bold mb-6 text-center text-emerald-800">¿Qué nos hace diferentes?</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <img class="w-16 mx-auto" src="/icono-celular.png" alt="Móvil" />
-          <img class="w-16 mx-auto" src="/icono-alerta.png" alt="Alerta" />
-          <img class="w-16 mx-auto" src="/icono-reloj.png" alt="Reloj" />
-          <img class="w-16 mx-auto" src="/icono-desarrollo.png" alt="Desarrollo" />
-        </div>
-      </section>
 
-      <!-- Nuestro equipo -->
-      <section class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12 text-center">
-        <h2 class="text-3xl font-bold mb-6 text-emerald-800">Nuestro equipo</h2>
-        <div class="flex flex-col md:flex-row justify-center items-center gap-12">
-          <div>
-            <img class="w-32 h-32 rounded-full object-cover mx-auto mb-2" src="/placeholder-1.jpg" alt="Integrante 1" />
-            <p class="text-emerald-700 font-bold">Nombre 1</p>
-          </div>
-          <div>
-            <img class="w-32 h-32 rounded-full object-cover mx-auto mb-2" src="/placeholder-2.jpg" alt="Integrante 2" />
-            <p class="text-emerald-700 font-bold">Nombre 2</p>
-          </div>
-        </div>
-      </section>
 
       <!-- Reconocimientos & Colaborar (vacíos por ahora) -->
       <section class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12">
-        <h2 class="text-3xl font-bold text-center text-emerald-800 mb-4">Reconocimientos</h2>
+        <h2 class="text-3xl font-bold text-center text-emerald-800 mb-4">Agradecimientos</h2>
         <p class="text-emerald-700 text-center">Próximamente…</p>
       </section>
 
