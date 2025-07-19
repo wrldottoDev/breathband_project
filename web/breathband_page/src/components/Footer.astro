@@ -1,0 +1,56 @@
+---
+// Footer.astro
+---
+
+<footer
+  class="bg-gradient-to-t from-emerald-900 via-green-800 to-emerald-800
+         text-white pt-16 pb-8 px-4 sm:px-6 lg:px-8"
+>
+  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
+
+    <!-- Logo + slogan -->
+    <div class="flex flex-col items-center md:items-start">
+      <img src="/image-logo.png" alt="BreathBand" class="w-12 h-12 mb-2" />
+      <h3 class="text-xl font-bold mb-1">BreathBand</h3>
+      <p class="text-sm text-emerald-200">Tu ritmo, tu vida.</p>
+    </div>
+
+    <!-- Links rápidos -->
+    <nav class="flex flex-col items-center md:items-start">
+      <h4 class="font-semibold mb-3">Explorar</h4>
+      <a href="#navbar-top" class="text-sm text-emerald-200 hover:text-white transition">Inicio</a>
+      <a href="#about-us" class="text-sm text-emerald-200 hover:text-white transition">¿Quiénes somos?</a>
+      <a href="#faq" class="text-sm text-emerald-200 hover:text-white transition mt-1">FAQ</a>
+      <a href="#colaborate" class="text-sm text-emerald-200 hover:text-white transition mt-1">Contacto</a>
+    </nav>
+
+    <div class="flex flex-col items-center md:items-start">
+      <h4 class="font-semibold mb-3">Newsletter</h4>
+      <form class="flex gap-2 w-full max-w-xs">
+        <input
+          type="email"
+          placeholder="tu@email.com"
+          class="flex-1 px-3 py-2 rounded-full bg-white/20 border border-white/30
+                 text-sm text-white placeholder-emerald-200 focus:outline-none
+                 focus:ring-2 focus:ring-emerald-400"
+        />
+        <button
+          type="submit"
+          class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded-full
+                 text-sm font-semibold transition"
+        >
+          Enviar
+        </button>
+      </form>
+    </div>
+
+  </div>
+
+  <!-- Línea divisoria -->
+  <div class="mt-12 border-t border-white/20"></div>
+
+  <!-- Copyright -->
+  <div class="mt-6 text-center text-sm text-emerald-300">
+    © 2025 BreathBand – Todos los derechos reservados.
+  </div>
+</footer>

@@ -3,7 +3,7 @@
 ---
 
 <!-- NAVBAR DESKTOP (sticky, sin redondear) -->
-<header
+<header id="navbar-top"
   class="hidden md:block top-0 z-50
          bg-white text-black shadow-md"
 >
@@ -17,11 +17,11 @@
 
       <!-- Links -->
       <ul class="flex items-center gap-8 text-base font-medium">
-        <li><a href="#hero" class="hover:text-[#008618]">Inicio</a></li>
+        <li><a href="#navbar-top" class="hover:text-[#008618]">Inicio</a></li>
         <li><a href="#project" class="hover:text-[#008618]">Proyecto</a></li>
         <li><a href="#about-us" class="hover:text-[#008618]">Equipo</a></li>
         <li><a href="#" class="hover:text-[#008618]">Estado</a></li>
-        <li><a href="#" class="hover:text-[#008618]">Contacto</a></li>
+        <li><a href="#colaborate" class="hover:text-[#008618]">Contacto</a></li>
       </ul>
 
       <button class="bg-white text-[#008618] px-4 py-2 rounded-full font-semibold hover:bg-emerald-50">
@@ -31,39 +31,39 @@
   </nav>
 </header>
 
-<!-- NAVBAR MOBILE (flotante, redondeado, glass) -->
-<header
+
+<header id="navbar-mobile"
   class="md:hidden fixed top-4 left-1/2 -translate-x-1/2 z-50
          bg-white/70 backdrop-blur-md shadow-xl
          rounded-full px-4 py-2 w-[90%] max-w-md"
 >
   <nav class="flex items-center justify-between h-14">
-    <!-- Logo + texto -->
+
     <div class="flex items-center gap-2">
       <img class="w-8 h-8" src="/image-logo.png" alt="Logo" />
       <span class="text-lg font-bold text-emerald-800">BreathBand</span>
     </div>
 
-    <!-- Botón menú -->
+
     <button id="menu-toggle" class="text-2xl text-emerald-700">
       <ion-icon name="menu"></ion-icon>
     </button>
   </nav>
 </header>
 
-<!-- MENÚ MÓVIL (overlay) -->
+
 <div
   id="mobile-menu"
   class="md:hidden fixed inset-0 bg-black/50 z-40 hidden"
 >
   <div class="absolute top-20 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-xl p-6 w-[80%] max-w-xs flex flex-col items-center gap-4">
-    <a href="#" class="text-emerald-700 hover:text-emerald-500">Products</a>
-    <a href="#" class="text-emerald-700 hover:text-emerald-500">Solution</a>
-    <a href="#" class="text-emerald-700 hover:text-emerald-500">Resource</a>
-    <a href="#" class="text-emerald-700 hover:text-emerald-500">Developers</a>
-    <a href="#" class="text-emerald-700 hover:text-emerald-500">Pricing</a>
+    <a href="#hero" class="text-emerald-700 hover:text-emerald-500">Inicio</a>
+    <a href="#project" class="text-emerald-700 hover:text-emerald-500">Proyecto</a>
+    <a href="#about-us" class="text-emerald-700 hover:text-emerald-500">Equipo</a>
+    <a href="#" class="text-emerald-700 hover:text-emerald-500">Estado</a>
+    <a href="#colaborate" class="text-emerald-700 hover:text-emerald-500">Contacto</a>
     <button class="bg-emerald-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-emerald-600">
-      Sign in
+      Participa
     </button>
   </div>
 </div>
