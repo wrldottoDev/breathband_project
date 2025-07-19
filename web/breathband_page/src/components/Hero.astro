@@ -2,9 +2,43 @@
 // Hero.astro
 ---
 
-<section id="hero" class="p-8 sm:p-12 text-center">
-        <h1 class="text-5xl font-extrabold">
-          Breath<span class="text-[#008618]">Band</span>
-        </h1>
-        <p class="mt-4 text-xl text-[#009b1c]">Tú ritmo, tú vida</p>
+<section
+  id="hero"
+  class="min-h-[100vh] md:min-h-[91.7vh] flex flex-col items-start justify-center
+         bg-gradient-to-br from-emerald-800 via-green-900 to-slate-900
+         px-4 sm:px-6 lg:px-8"
+>
+  <div class="md:max-w-lg md:mx-auto md:w-full">
+    <h1 class="text-5xl md:text-8xl font-extrabold text-white">
+      Breath<span class="text-[#008618]">Band</span>
+    </h1>
+
+    <p
+      id="slogan"
+      class="text-2xl mt-2 md:text-4xl text-white/90 transition-opacity duration-700"
+    >
+      Tú ritmo, tú vida
+    </p>
+  </div>
 </section>
+
+<script>
+  const phrases = [
+    "Tu ritmo, tu vida.",                // español
+    "Your rhythm, your life.",           // inglés
+    "Ton rythme, ta vie.",               // francés
+    "Seu ritmo, sua vida.",              // portugués
+    "Ditt tempo, ditt liv."              // sueco
+  ];
+  let index = 0;
+  const el = document.getElementById('slogan');
+
+  setInterval(() => {
+    el?.style && (el.style.opacity = '0');          // fade out
+    setTimeout(() => {
+      index = (index + 1) % phrases.length;
+      el && (el.textContent = phrases[index]);      // cambiar texto
+      el?.style && (el.style.opacity = '1');        // fade in
+    }, 600);
+  }, 5000);
+</script>
