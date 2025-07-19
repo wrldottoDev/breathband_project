@@ -1,0 +1,91 @@
+---
+// pages/breathband.astro
+import Layout from "../layouts/Layout.astro"
+---
+
+<Layout>
+    <main class="bg-gradient-to-br from-emerald-50 via-green-100 to-teal-50
+                text-emerald-900 font-sans">
+    <!-- Hero interno -->
+    <section class="min-h-[60vh] flex flex-col items-center justify-center px-6 text-center">
+        <h1 class="text-5xl md:text-7xl font-extrabold">
+        ¿Qué es <span class="text-[#008618]">BreathBand</span>?
+        </h1>
+        <p class="mt-4 text-xl max-w-3xl text-emerald-700">
+        Un dispositivo portátil que te ayuda a respirar mejor, reducir la ansiedad y recuperar el control de tu vida, paso a paso.
+        </p>
+    </section>
+
+    <!-- Características detalladas -->
+    <section class="max-w-6xl mx-auto px-6 py-16 space-y-20">
+
+        <!-- Bloque 1 -->
+        <article class="grid md:grid-cols-2 gap-10 items-center scroll-element">
+        <div class="bg-white/60 backdrop-blur-md rounded-3xl shadow-xl p-8">
+            <h2 class="text-3xl font-bold mb-4 text-emerald-800">Mide tu respiración en tiempo real</h2>
+            <p class="text-emerald-700 leading-relaxed">
+            Sensores de última generación capturan tu frecuencia cardíaca y variabilidad (HRV) cada 250 ms para ajustar la guía de respiración al instante.
+            </p>
+        </div>
+        <img src="/detalle-sensor.jpg" alt="Sensor en acción" class="rounded-3xl shadow-lg">
+        </article>
+
+        <!-- Bloque 2 -->
+        <article class="grid md:grid-cols-2 gap-10 items-center scroll-element">
+        <img src="/detalle-app.jpg" alt="App BreathBand" class="rounded-3xl shadow-lg md:order-last">
+        <div class="bg-white/60 backdrop-blur-md rounded-3xl shadow-xl p-8">
+            <h2 class="text-3xl font-bold mb-4 text-emerald-800">App intuitiva</h2>
+            <ul class="text-emerald-700 space-y-2 list-disc list-inside">
+            <li>Retos diarios de respiración</li>
+            <li>Estadísticas de progreso</li>
+            <li>Notificaciones discretas</li>
+            <li>Modos día y noche</li>
+            </ul>
+        </div>
+        </article>
+
+        <!-- Bloque 3 -->
+        <article class="grid md:grid-cols-2 gap-10 items-center scroll-element">
+        <div class="bg-white/60 backdrop-blur-md rounded-3xl shadow-xl p-8">
+            <h2 class="text-3xl font-bold mb-4 text-emerald-800">Portátil y discreto</h2>
+            <p class="text-emerald-700 leading-relaxed">
+            24 g de peso, batería de 3 días y cinta transpirable. Llévalo en la muñeca o en el tobillo sin notarlo.
+            </p>
+        </div>
+        <img src="/detalle-uso.jpg" alt="Uso diario" class="rounded-3xl shadow-lg">
+        </article>
+
+        <!-- CTA final -->
+        <section class="text-center scroll-element">
+        <a
+            href="#contacto"
+            class="bg-emerald-600 hover:bg-emerald-700 text-white px-10 py-4 rounded-full
+                text-xl font-semibold shadow-xl transition-transform hover:scale-105"
+        >
+            Quiero saber más
+        </a>
+        </section>
+    </section>
+
+    <!-- Animación scroll -->
+    <style>
+        .scroll-element {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 1s ease;
+        }
+        .scroll-element.visible {
+        opacity: 1;
+        transform: translateY(0);
+        }
+    </style>
+    <script is:inline>
+        const els = document.querySelectorAll('.scroll-element');
+        const io = new IntersectionObserver(entries =>
+        entries.forEach(e => e.target.classList.toggle('visible', e.isIntersecting)),
+        { threshold: 0.2 }
+        );
+        els.forEach(el => io.observe(el));
+    </script>
+    </main>
+</Layout>

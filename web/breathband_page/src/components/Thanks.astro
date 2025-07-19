@@ -1,0 +1,58 @@
+---
+// Thanks.astro
+---
+
+
+<section
+  class="thanks-section bg-gradient-to-br from-emerald-100 via-green-50 to-teal-100
+         text-emerald-800 rounded-3xl shadow-xl p-10 sm:p-16
+         relative overflow-hidden mb-16 md:mb-24"
+>
+  <h2 class="text-4xl font-extrabold text-center mb-6 drop-shadow-sm">
+    Agradecimientos
+  </h2>
+  <div class="max-w-3xl mx-auto space-y-4 text-lg leading-relaxed">
+    <p>
+      A nuestras familias: gracias infinitas por creer en nosotros desde el primer día.
+    </p>
+    <p>
+      A la profesora <strong class="text-emerald-600">Rebeca Villalobos</strong>,
+      quien impulsó este proyecto desde el año pasado y gestionó su financiamiento
+      a través de <em class="text-emerald-500">COOPE</em> del colegio.
+    </p>
+    <p>
+      A <strong class="text-emerald-600">Alonso Sibaja</strong>, <strong>Eduardo Arias</strong>,
+      <strong>Lupita Rojas</strong> y <strong>Óscar Lizano</strong> por su constante respaldo y motivación.
+    </p>
+  </div>
+  <div class="flex justify-center mt-8">
+    <svg class="w-8 h-8 text-emerald-500 animate-bounce" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+    </svg>
+  </div>
+</section>
+
+<style>
+.thanks-section {
+  opacity: 0;
+  transform: scale(0.95) translateY(40px);
+  transition: opacity 1s cubic-bezier(.4,0,.2,1), transform 1s cubic-bezier(.4,0,.2,1);
+}
+.thanks-section.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+</style>
+<script>
+window.addEventListener('scroll', function () {
+  const section = document.querySelector('.thanks-section');
+  if (!section) return;
+  const position = section.getBoundingClientRect();
+  if (position.top < window.innerHeight && position.bottom >= 0) {
+    section.classList.add('visible');
+  } else {
+    section.classList.remove('visible');
+  }
+});
+window.dispatchEvent(new Event('scroll'));
+</script>

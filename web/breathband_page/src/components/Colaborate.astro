@@ -3,34 +3,59 @@
 ---
 
 <section id="colaborate"
-  class="bg-gradient-to-r from-emerald-500 to-green-600
-         text-white shadow-2xl rounded-3xl p-10 sm:p-16 text-center"
+  class="colaborate-section bg-gradient-to-r from-emerald-500 to-green-600
+         text-white shadow-2xl rounded-3xl p-10 sm:p-16 text-center relative overflow-hidden"
 >
-
-   <!--  <div
-    class="absolute inset-0 opacity-10 animate-pulse pointer-events-none"
-    style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'40\' fill=\'none\' stroke=\'white\' stroke-width=\'2\'/></svg>'); background-repeat: no-repeat; background-position: center; background-size: 60%;"
-    ></div> -->
-
   <h2 class="text-4xl md:text-5xl font-extrabold mb-4 drop-shadow">
     Colabora con <span class="text-[#b5f0d9]">nosotros</span>
   </h2>
   <p class="text-lg md:text-xl mb-6">
     ¿Tienes una idea, proyecto o quieres unirte al equipo?
   </p>
-
   <a
-    href="mailto:hola@breathband.com"
+    href="/contact"
     class="inline-flex items-center gap-3 bg-white/20 backdrop-blur-sm
            border border-white/30 text-white px-8 py-4 rounded-full
            text-lg font-semibold shadow-lg hover:bg-white/30
            hover:scale-105 transition-all duration-300"
   >
     <img
-      src="public//icono-textballoon.png"
+      src="/icono-textballoon.png"
       alt="Mail"
       class="w-6 h-6"
     />
     Contactanos
   </a>
 </section>
+
+<style>
+.colaborate-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(.4,0,.2,1), transform 1s cubic-bezier(.4,0,.2,1);
+}
+.colaborate-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.colaborate-bg {
+  animation: giro-fondo 6s linear infinite;
+}
+@keyframes giro-fondo {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+</style>
+<script>
+window.addEventListener('scroll', function () {
+  const section = document.querySelector('.colaborate-section');
+  if (!section) return;
+  const position = section.getBoundingClientRect();
+  if (position.top < window.innerHeight && position.bottom >= 0) {
+    section.classList.add('visible');
+  } else {
+    section.classList.remove('visible');
+  }
+});
+window.dispatchEvent(new Event('scroll'));
+</script>

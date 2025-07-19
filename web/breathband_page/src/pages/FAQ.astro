@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+    <section id="faq" class="py-32 md:py-16 bg-gradient-to-br from-emerald-50 via-green-100 to-teal-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-center text-emerald-800 mb-12">
+        Preguntas frecuentes
+        </h2>
+
+        <!-- Acordeón glass -->
+        <ul class="space-y-6">
+        {
+            [
+            {
+                q: "¿Cómo se usa BreathBand?",
+                a: "Coloca la banda en tu muñeca o tobillo, abre la app y sigue la guía de respiración. Los sensores hacen el resto."
+            },
+            {
+                q: "¿Es necesario pagar una suscripción?",
+                a: "La app incluye funciones básicas gratuitas para siempre. El plan Pro desbloquea retos avanzados y análisis detallado."
+            },
+            {
+                q: "¿Funciona sin conexión a internet?",
+                a: "Sí. El dispositivo almacena hasta 24 horas de datos y los sincroniza cuando vuelves a conectarte."
+            },
+            {
+                q: "¿Es compatible con iOS y Android?",
+                a: "Totalmente. Descárgala desde App Store o Google Play."
+            },
+            {
+                q: "¿Qué duración tiene la batería?",
+                a: "Entre 2 y 3 días de uso continuo con una sola carga de 90 minutos."
+            }
+            ].map(({ q, a }) => (
+            <li
+                class="bg-white/60 backdrop-blur-md rounded-2xl shadow-lg
+                    transition-all duration-300 hover:shadow-emerald-200/40"
+            >
+                <details class="group">
+                <summary class="cursor-pointer flex justify-between items-center
+                                p-6 sm:p-8 text-xl font-semibold text-emerald-800">
+                    {q}
+                    <svg
+                    class="w-6 h-6 text-emerald-600 group-open:rotate-180 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                    >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </summary>
+                <div class="px-6 sm:px-8 pb-6 text-emerald-700 leading-relaxed">
+                    {a}
+                </div>
+                </details>
+            </li>
+            ))
+        }
+        </ul>
+    </div>
+    </section>
+</Layout>
