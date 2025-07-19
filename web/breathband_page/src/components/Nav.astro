@@ -1,0 +1,94 @@
+---
+// Nav.astro
+---
+
+<!-- NAVBAR DESKTOP (sticky, sin redondear) -->
+<header
+  class="hidden md:block sticky top-0 z-50
+         bg-white text-black shadow-md"
+>
+  <nav class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo + texto -->
+      <div class="flex items-center gap-3">
+        <img class="w-10 h-10" src="/image-logo.png" alt="Logo" />
+        <h1 class="text-2xl font-bold">Breath<span class="text-[#008618]">Band</span></h1>
+      </div>
+
+      <!-- Links -->
+      <ul class="flex items-center gap-8 text-base font-medium">
+        <li><a href="#" class="hover:text-[#008618]">Inicio</a></li>
+        <li><a href="#" class="hover:text-[#008618]">Proyecto</a></li>
+        <li><a href="#" class="hover:text-[#008618]">Equipo</a></li>
+        <li><a href="#" class="hover:text-[#008618]">Estado</a></li>
+        <li><a href="#" class="hover:text-[#008618]">Contacto</a></li>
+      </ul>
+
+      <button class="bg-white text-[#008618] px-4 py-2 rounded-full font-semibold hover:bg-emerald-50">
+        Participa
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- NAVBAR MOBILE (flotante, redondeado, glass) -->
+<header
+  class="md:hidden fixed top-4 left-1/2 -translate-x-1/2 z-50
+         bg-white/70 backdrop-blur-md shadow-xl
+         rounded-full px-4 py-2 w-[90%] max-w-md"
+>
+  <nav class="flex items-center justify-between h-14">
+    <!-- Logo + texto -->
+    <div class="flex items-center gap-2">
+      <img class="w-8 h-8" src="/image-logo.png" alt="Logo" />
+      <span class="text-lg font-bold text-emerald-800">BreathBand</span>
+    </div>
+
+    <!-- Botón menú -->
+    <button id="menu-toggle" class="text-2xl text-emerald-700">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </nav>
+</header>
+
+<!-- MENÚ MÓVIL (overlay) -->
+<div
+  id="mobile-menu"
+  class="md:hidden fixed inset-0 bg-black/50 z-40 hidden"
+>
+  <div class="absolute top-20 left-1/2 -translate-x-1/2 bg-white rounded-2xl shadow-xl p-6 w-[80%] max-w-xs flex flex-col items-center gap-4">
+    <a href="#" class="text-emerald-700 hover:text-emerald-500">Products</a>
+    <a href="#" class="text-emerald-700 hover:text-emerald-500">Solution</a>
+    <a href="#" class="text-emerald-700 hover:text-emerald-500">Resource</a>
+    <a href="#" class="text-emerald-700 hover:text-emerald-500">Developers</a>
+    <a href="#" class="text-emerald-700 hover:text-emerald-500">Pricing</a>
+    <button class="bg-emerald-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-emerald-600">
+      Sign in
+    </button>
+  </div>
+</div>
+
+<!-- Ionicons -->
+<script type="module" src="https://unpkg.com/ionicons@7/dist/ionicons/ionicons.esm.js"></script>
+
+<!-- Script móvil -->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let isOpen = false;
+
+  menuToggle?.addEventListener('click', () => {
+    isOpen = !isOpen;
+    mobileMenu?.classList.toggle('hidden', !isOpen);
+    const icon = menuToggle.querySelector('ion-icon');
+    if (icon) icon.setAttribute('name', isOpen ? 'close' : 'menu');
+  });
+
+  mobileMenu?.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) {
+      mobileMenu.classList.add('hidden');
+      const icon = menuToggle?.querySelector('ion-icon');
+      if (icon) icon.setAttribute('name', 'menu');
+    }
+  });
+</script>

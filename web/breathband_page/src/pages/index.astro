@@ -1,93 +1,102 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
 
-	  <header>
-            <div class="container">
-				<img src="public/image-logo.png" alt="BreathBand Logo" class="w-16 h-16" />
-                <p class="logo">BreathBand</p>
-                <nav>
-                    <a href="#BreathBand">BreathBand</a>
-                    <a href="sobre nosotros/sobre.html">Sobre Nosotros</a>
-                    <a href="más información/info.html">Más información</a>
-                </nav>
-            </div>
-    </header>
+    <Nav />
 
-    <section class="front-page">
-        <h1>Breath<span>Band</span></h1>
-        <br>
-        <p>Tú ritmo, tú vida</p>
-    </section>
+    <Hero />
+    <main class="pt-32 md:pt-0 px-4 sm:px-8 max-w-7xl mx-auto space-y-20">
+        
+      
 
-    <section class="who-are-we">
-        <h2>¿Quiénes somos?</h2>
-        <p>
-        Somos dos estudiantes del Colegio Técnico Profesional del este con deseos de innovar y al mismo tiempo ayudar con la tecnología. 
-        BreathBand nace de esa necesidad de ayudar a 
-        las personas que sufren ataques de ansiedad que buscan una solución de apoyo mediante la tecnología, 
-        si lo pensamos la ansiedad no es algo con que jugar, más de 300millones de personas en el mundo sufren ataques de ansiedad y 
-        todo el mundo mínimo lo ha experimentado alguna vez en su vida. 
-        Nosotros lo hemos vivido en carne y hueso y sabemos lo importante que es tener herramientas accesibles.
+      <!-- ¿Quiénes somos? -->
+      <section class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12 flex flex-col md:flex-row items-center gap-8">
+        <div class="flex-1">
+          <h2 class="text-3xl font-bold mb-4 text-emerald-800">¿Quiénes somos?</h2>
+          <p class="text-emerald-700 leading-relaxed">
+            Somos dos estudiantes del Colegio Técnico Profesional del Este con deseos de innovar y ayudar con la tecnología.  
+            BreathBand nace de la necesidad de acompañar a quienes sufren ataques de ansiedad.  
+            Más de 300 millones de personas en el mundo viven con ansiedad; nosotros también la hemos sentido y queremos ofrecer herramientas accesibles.
+          </p>
+        </div>
+        <img class="w-full md:w-1/3 rounded-2xl object-cover" src="/placeholder-team.jpg" alt="Equipo BreathBand" />
+      </section>
+
+      <!-- ¿Qué es BreathBand? -->
+      <section class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12">
+        <h2 class="text-3xl font-bold mb-4 text-emerald-800">¿Qué es BreathBand?</h2>
+        <p class="text-emerald-700 leading-relaxed">
+          BreathBand es un dispositivo portátil que ayuda a controlar la respiración y reducir la ansiedad.  
+          Mide la frecuencia cardíaca y su variabilidad, ofreciendo retroalimentación en tiempo real para respirar mejor y sentirse más tranquilo y centrado.
         </p>
-        <img src="..." alt="...">
-    </section>
+      </section>
 
-    <section class="what-is-breathband">
-        <h2>¿Qué es BreathBand?</h2>
-        <p>
-        BreathBand es un dispositivo portátil que ayuda a las personas a controlar su respiración y reducir la ansiedad. 
-        Utiliza tecnología avanzada para medir la frecuencia cardíaca y la variabilidad de la frecuencia cardíaca, 
-        proporcionando retroalimentación en tiempo real sobre el estado del usuario. 
-        Con BreathBand, los usuarios pueden aprender a respirar de manera más efectiva, lo que les ayuda a sentirse más tranquilos y centrados.
-        </p>
-    </section>
+      <!-- Misión y Visión -->
+      <section class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8">
+          <h3 class="text-2xl font-bold mb-3 text-emerald-800">Misión</h3>
+          <p class="text-emerald-700">Crear tecnología accesible y útil para mejorar la salud mental de las personas en su día a día.</p>
+        </div>
+        <div class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8">
+          <h3 class="text-2xl font-bold mb-3 text-emerald-800">Visión</h3>
+          <p class="text-emerald-700">Ayudar a todas las personas con ansiedad a sentirse mejor.</p>
+        </div>
+      </section>
 
-    <section class="mission-and-vision">
-        <h2>Misión y Visión</h2>
-        <p>
-            <span>Misión:</span> Crear tecnología accesible y útil para mejorar la salud mental de las personas en su día a día.
-            <span>Visión:</span> Ayudar a todas esas personas con ansiedad a sentirse mejor.
-        </p>
-    </section>
-
-    <section class="our-values">
-        <h2>Nuestros Valores</h2>
-        <ul>
-            <li>Innovación</li>
-            <li>Compromiso</li>
-            <li>Empatía</li>
-            <li>Accesibilidad</li>
+      <!-- Nuestros Valores -->
+      <section class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12">
+        <h2 class="text-3xl font-bold mb-6 text-center text-emerald-800">Nuestros Valores</h2>
+        <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-emerald-700 font-medium">
+          <li class="bg-emerald-100/70 rounded-2xl py-4">Innovación</li>
+          <li class="bg-emerald-100/70 rounded-2xl py-4">Compromiso</li>
+          <li class="bg-emerald-100/70 rounded-2xl py-4">Empatía</li>
+          <li class="bg-emerald-100/70 rounded-2xl py-4">Accesibilidad</li>
         </ul>
-    </section>
+      </section>
 
-    <section class="what-is-different">
-        <h2>¿Qué nos hace diferentes?</h2>
-        <img src="public//icono-celular.png" alt="celular">
-        <img src="public/icono-alerta.png" alt="alerta">
-        <img src="public//icono-reloj.png" alt="reloj">
-        <img src="public//icono-desarrollo.png" alt="desarrollo">
-    </section>
+      <!-- ¿Qué nos hace diferentes? -->
+      <section class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12">
+        <h2 class="text-3xl font-bold mb-6 text-center text-emerald-800">¿Qué nos hace diferentes?</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <img class="w-16 mx-auto" src="/icono-celular.png" alt="Móvil" />
+          <img class="w-16 mx-auto" src="/icono-alerta.png" alt="Alerta" />
+          <img class="w-16 mx-auto" src="/icono-reloj.png" alt="Reloj" />
+          <img class="w-16 mx-auto" src="/icono-desarrollo.png" alt="Desarrollo" />
+        </div>
+      </section>
 
-    <section class="team">
-        <h2>Nuestro equipo</h2>
-        <p>nombre 1</p>
-        <img src="..." alt="...">
-        <p>nombre 2</p>
-        <img src="..." alt="...">
-    </section>
+      <!-- Nuestro equipo -->
+      <section class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12 text-center">
+        <h2 class="text-3xl font-bold mb-6 text-emerald-800">Nuestro equipo</h2>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-12">
+          <div>
+            <img class="w-32 h-32 rounded-full object-cover mx-auto mb-2" src="/placeholder-1.jpg" alt="Integrante 1" />
+            <p class="text-emerald-700 font-bold">Nombre 1</p>
+          </div>
+          <div>
+            <img class="w-32 h-32 rounded-full object-cover mx-auto mb-2" src="/placeholder-2.jpg" alt="Integrante 2" />
+            <p class="text-emerald-700 font-bold">Nombre 2</p>
+          </div>
+        </div>
+      </section>
 
-    <section class="acknowledgment">
+      <!-- Reconocimientos & Colaborar (vacíos por ahora) -->
+      <section class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12">
+        <h2 class="text-3xl font-bold text-center text-emerald-800 mb-4">Reconocimientos</h2>
+        <p class="text-emerald-700 text-center">Próximamente…</p>
+      </section>
 
-    </section>
-
-    <section class="colaborate-with-us">
-
-    </section>
+      <section class="bg-white/60 backdrop-blur-md rounded-3xl shadow-lg p-8 sm:p-12">
+        <h2 class="text-3xl font-bold text-center text-emerald-800 mb-4">Colabora con nosotros</h2>
+        <p class="text-emerald-700 text-center">Escríbenos a <a href="mailto:hola@breathband.com" class="underline">hola@breathband.com</a></p>
+      </section>
+    </main>
 
 </Layout>
