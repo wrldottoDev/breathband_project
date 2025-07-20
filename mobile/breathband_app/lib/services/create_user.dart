@@ -1,13 +1,19 @@
-import 'dart:async';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class AuthenticationService {
-  Future<bool> login(String email, String password) async {
-    // Simulate login process
-    return Future.delayed(1000, true);
-  }
+final auth = FirebaseAuth.instance;
 
-  Future<bool> register(String email, String password) async {
-    // Simulate register process
-    return Future.delayed(1000, true);
+Future<User?> createUser(String email, String password) async {
+  try {
+    final UserCredential userCredential = await auth.createUserWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+    return userCredential.user;
+  } on FirebaseAuthException catch (e) {
+    print(e.message);
+    return null;
+  } catch (e) {
+    print(e);
+    return null;
   }
 }
