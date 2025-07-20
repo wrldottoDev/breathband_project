@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "167599038714",
+    "project_id": "breathband-ef505",
+    "storage_bucket": "breathband-ef505.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:167599038714:android:e471cc198aeb9b0ca2a943",
+        "android_client_info": {
+          "package_name": "com.example.breathband_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwWWsgeFnO61uBw8b51pO4eiumxlV8QCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
