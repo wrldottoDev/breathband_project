@@ -1,5 +1,7 @@
+import 'package:breathband_app/pages/home_page.dart';
 import 'package:breathband_app/pages/login_page.dart';
 import 'package:breathband_app/pages/register_page.dart';
+import 'package:breathband_app/pages/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -19,22 +21,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         fontFamily: 'Roboto',
       ),
-      initialRoute: '/login',
+      initialRoute: '/splash',
       routes: {
+        '/splash': (context) => SplashPage(),
         '/login': (context) => LoginPage(),
         '/register': (context) => RegisterPage(),
         '/home': (context) => HomePage(), // Crea esta pantalla después
       },
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text("Home")),
-      body: Center(child: Text("Welcome to Home!")),
     );
   }
 }

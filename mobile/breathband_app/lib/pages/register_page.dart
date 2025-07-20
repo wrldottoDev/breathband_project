@@ -1,8 +1,8 @@
-import 'package:breathband_app/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:breathband_app/animated_routes.dart';
+import 'package:breathband_app/pages/login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -34,53 +34,68 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
+    final bottomInset = MediaQuery.of(context).viewInsets.bottom;
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            colors: [
-              const Color.fromARGB(255, 0, 128, 0),
-              const Color.fromARGB(255, 0, 200, 83),
-              const Color.fromARGB(255, 144, 238, 144)
-            ],
+      resizeToAvoidBottomInset: true,
+      body: SingleChildScrollView(
+        physics: ClampingScrollPhysics(),
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              colors: [Colors.white, Colors.white, Colors.white],
+            ),
           ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(height: 80),
-            Padding(
-              padding: EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  FadeInUp(
-                    duration: Duration(milliseconds: 1000),
-                    child: Text(
-                      "Register",
-                      style: TextStyle(color: Colors.white, fontSize: 40),
+          child: Column(
+            children: [
+              SizedBox(height: 80),
+              FadeInUp(
+                duration: Duration(milliseconds: 1000),
+                child: Center(
+                  child: Image.asset(
+                    'assets/image-logo.png',
+                    height: 100,
+                    width: 100,
+                  ),
+                ),
+              ),
+              SizedBox(height: 10),
+              FadeInUp(
+                duration: Duration(milliseconds: 1200),
+                child: Center(
+                  child: Text(
+                    "BreathBand",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 0, 128, 0),
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                ],
+                ),
               ),
-            ),
-            SizedBox(height: 20),
-            Expanded(
-              child: Container(
+              SizedBox(height: 20),
+              Container(
+                margin: EdgeInsets.only(top: 20),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(60),
                     topRight: Radius.circular(60),
                   ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 20,
+                      offset: Offset(0, -10),
+                    ),
+                  ],
                 ),
                 child: Padding(
                   padding: EdgeInsets.all(30),
                   child: Column(
-                    children: <Widget>[
-                      SizedBox(height: 60),
+                    children: [
+                      SizedBox(height: 40),
                       FadeInUp(
                         duration: Duration(milliseconds: 1400),
                         child: Container(
@@ -92,42 +107,27 @@ class _RegisterPageState extends State<RegisterPage> {
                                 color: Color.fromARGB(255, 214, 255, 231),
                                 blurRadius: 20,
                                 offset: Offset(0, 10),
-                              )
+                              ),
                             ],
                           ),
                           child: Column(
-                            children: <Widget>[
-                              Container(
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(color: Colors.grey.shade200),
-                                  ),
-                                ),
-                                child: TextField(
-                                  controller: _emailController,
-                                  decoration: InputDecoration(
-                                    hintText: "Email",
-                                    hintStyle: TextStyle(color: Colors.grey),
-                                    border: InputBorder.none,
-                                  ),
+                            children: [
+                              TextField(
+                                controller: _emailController,
+                                decoration: InputDecoration(
+                                  hintText: "Email",
+                                  prefixIcon: Icon(Icons.email, color: Colors.green),
+                                  border: InputBorder.none,
                                 ),
                               ),
-                              Container(
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    bottom: BorderSide(color: Colors.grey.shade200),
-                                  ),
-                                ),
-                                child: TextField(
-                                  obscureText: true,
-                                  controller: _passwordController,
-                                  decoration: InputDecoration(
-                                    hintText: "Password",
-                                    hintStyle: TextStyle(color: Colors.grey),
-                                    border: InputBorder.none,
-                                  ),
+                              Divider(height: 1, color: Colors.grey.shade300),
+                              TextField(
+                                obscureText: true,
+                                controller: _passwordController,
+                                decoration: InputDecoration(
+                                  hintText: "Password",
+                                  prefixIcon: Icon(Icons.lock, color: Colors.green),
+                                  border: InputBorder.none,
                                 ),
                               ),
                             ],
@@ -151,30 +151,35 @@ class _RegisterPageState extends State<RegisterPage> {
                               : Text(
                                   "Create Account",
                                   style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                         ),
                       ),
-                      SizedBox(height: 40),
+                      SizedBox(height: 20),
                       FadeInUp(
                         duration: Duration(milliseconds: 1700),
                         child: TextButton(
                           onPressed: () {
-                          Navigator.push(
-                            context,
-                            slideUpRoute(LoginPage()),
-                          );
-                        },
-                        child: Text("Login"),
-                      ),
+                            Navigator.push(
+                              context,
+                              slideUpKeyboardRoute(LoginPage()),
+                            );
+                          },
+                          child: Text(
+                            "Already have an account? Login",
+                            style: TextStyle(color: Colors.green),
+                          ),
+                        ),
                       ),
                     ],
                   ),
                 ),
               ),
-            ),
-          ],
+              SizedBox(height: bottomInset)
+            ],
+          ),
         ),
       ),
     );
