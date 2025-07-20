@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:breathband_app/pages/home_page.dart';
+import 'package:breathband_app/pages/login_page.dart';
+import 'package:breathband_app/pages/register_page.dart';
 import 'package:breathband_app/routes.dart';
 
 void main() {
@@ -11,7 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       initialRoute: Routes.login,
-      routes: Routes.routeMap,
+      routes: <String, WidgetBuilder>{
+        Routes.login: (context) => LoginPage(),
+        Routes.register: (context) => RegisterPage(),
+        Routes.home: (context) => HomePage(),
+      },
     );
   }
 }

@@ -9,10 +9,8 @@ class Routes {
   static const home = '/home';
 
   static final routes = <Route>[
-    MaterialRoute(name: login, builder: (context) => LoginPage()),
-    MaterialRoute(name: register, builder: (context) => RegisterPage()),
-    MaterialRoute(name: home, builder: (context) => HomePage()),
+    MaterialPageRoute(builder: (context) => LoginPage()),
+    MaterialPageRoute(builder: (context) => RegisterPage()),
+    MaterialPageRoute(builder: (context) => HomePage()),
   ];
-
-  static var routeMap;
 }

@@ -1,33 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:breathband_app/widgets/app_bar.dart';
 
-class BottomNavigationBar extends StatelessWidget {
+class CustomBottomNavigationBar extends StatelessWidget {
+  final int currentIndex;
+  final ValueChanged<int> onTap;
+
+  const CustomBottomNavigationBar({
+    Key? key,
+    required this.currentIndex,
+    required this.onTap,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      items: <BottomNavigationBarItem>[
+      currentIndex: currentIndex,
+      onTap: onTap,
+      items: const [
         BottomNavigationBarItem(
-          icon: Icons.home,
-          title: 'Home',
-        activeIcon: Icons.homeActive,
+          icon: Icon(Icons.home),
+          label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icons.mail,
-          title: 'Messages',
-          activeIcon: Icons.mailActive,
+          icon: Icon(Icons.mail),
+          label: 'Messages',
         ),
         BottomNavigationBarItem(
-          icon: Icons.person,
-          title: 'Profile',
-          activeIcon: Icons.personActive,
-          ),
+          icon: Icon(Icons.person),
+          label: 'Profile',
+        ),
       ],
-    unselectedIconTheme: IconTheme.light,
-    unselectedIconTheme: IconTheme.dark,
-    unselectedLabelStyle: TextStyle(color: Colors.white),
-    selectedLabelStyle: TextStyle(color: Colors.blue),
-    iconSize: 30,
-    labelPadding: EdgeInsets.symmetric(horizontal: 20),
+      selectedItemColor: Colors.blue,
+      unselectedItemColor: Colors.grey,
+      backgroundColor: Colors.white,
+      type: BottomNavigationBarType.fixed,
     );
   }
 }
