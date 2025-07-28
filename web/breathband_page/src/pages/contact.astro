@@ -1,8 +1,78 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Welcome from '../components/Welcome.astro';
 ---
 
-<Layout>
-    <Welcome />
+<Layout title="Contacto – BreathBand">
+  <section
+    class="py-32 md:py-16 bg-gradient-to-br from-emerald-50 via-green-100 to-teal-50"
+  >
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-center text-emerald-800 mb-12">
+        Contáctanos
+      </h1>
+
+      <!-- Formulario glass -->
+      <form
+        action="https://formspree.io/f/FORM_ID"
+        method="POST"
+        class="bg-white/60 backdrop-blur-md rounded-2xl shadow-lg p-8 space-y-6"
+      >
+        <div>
+          <label for="name" class="block text-sm font-semibold text-emerald-800 mb-1">
+            Nombre
+          </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            class="w-full px-4 py-2 rounded-lg border border-emerald-200 bg-white/70 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            placeholder="Tu nombre"
+          />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-semibold text-emerald-800 mb-1">
+            Email
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            class="w-full px-4 py-2 rounded-lg border border-emerald-200 bg-white/70 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            placeholder="tu@correo.com"
+          />
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-semibold text-emerald-800 mb-1">
+            Mensaje
+          </label>
+          <textarea
+            name="message"
+            id="message"
+            rows="5"
+            required
+            class="w-full px-4 py-2 rounded-lg border border-emerald-200 bg-white/70 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            placeholder="Cuéntanos cómo podemos ayudarte"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-200"
+        >
+          Enviar mensaje
+        </button>
+      </form>
+
+      <!-- Datos de contacto -->
+      <div class="mt-12 text-center space-y-2 text-emerald-800">
+        <p><strong>Correo:</strong> breathband@gmail.com</p>
+        <p><strong>Teléfono:</strong> +506 84792636</p>
+        <p class="text-sm">Responderemos en menos de 24 h.</p>
+      </div>
+    </div>
+  </section>
 </Layout>

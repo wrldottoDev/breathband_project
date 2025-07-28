@@ -1,0 +1,62 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Ayuda ante ataques de pánico">
+  <section
+    class="py-32 md:py-16 bg-gradient-to-br from-emerald-50 via-green-100 to-teal-50"
+  >
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-center text-emerald-800 mb-12">
+        Qué hacer ante un ataque de pánico
+      </h1>
+
+      <ul class="space-y-6">
+        {
+          [
+            {
+              q: "¿Qué es un ataque de pánico?",
+              a: "Es una respuesta intensa y súbita de miedo que suele durar entre 5 y 10 min. Se siente como un infarto, pero no es mortal ni daña tu corazón.",
+            },
+            {
+              q: "Respiración 4-4-7",
+              a: "Inhala 4 seg → Mantén 4 seg → Exhala 7 seg. Repite 3-5 veces. Regula tu sistema nervioso en segundos.",
+            },
+            {
+              q: "Relajación muscular progresiva",
+              a: "Tensa y relaja cada grupo muscular (pies, piernas, abdomen, brazos, cara) durante 5-10 seg. Reduce la tensión física inmediatamente.",
+            },
+            {
+              q: "Visualización guiada",
+              a: "Cierra los ojos e imagina un lugar seguro (playa, bosque). Invoca olores, sonidos y texturas para alejar el estrés.",
+            },
+            {
+              q: "Cuándo buscar ayuda profesional",
+              a: "Si los ataques se repiten varias veces al mes, evitas lugares o interfieren con tu vida diaria, consulta un profesional de salud mental.",
+            },
+          ].map(({ q, a }) => (
+            <li class="bg-white/60 backdrop-blur-md rounded-2xl shadow-lg transition-all duration-300 hover:shadow-emerald-200/40">
+              <details class="group">
+                <summary class="cursor-pointer flex justify-between items-center p-6 sm:p-8 text-xl font-semibold text-emerald-800">
+                  {q}
+                  <svg
+                    class="w-6 h-6 text-emerald-600 group-open:rotate-180 transition-transform"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    viewBox="0 0 24 24"
+                  >
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div class="px-6 sm:px-8 pb-6 text-emerald-700 leading-relaxed">
+                  {a}
+                </div>
+              </details>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Layout>
