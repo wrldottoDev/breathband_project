@@ -83,6 +83,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text("Bitácora"),
         backgroundColor: const Color(0xFF00C853),
+        foregroundColor: Colors.white,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => _showAddDialog(),
@@ -115,7 +116,27 @@ class _HomePageState extends State<HomePage> {
                   ),
                   trailing: IconButton(
                     icon: const Icon(Icons.delete, color: Colors.red),
-                    onPressed: () => _service.deleteNote(note.id),
+                    onPressed: () async {
+  final confirm = await showDialog<bool>(
+    context: context,
+    builder: (_) => AlertDialog(
+      title: const Text('¿Borrar esta nota?'),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.pop(context, false),
+          child: const Text('Cancelar'),
+        ),
+        ElevatedButton(
+          onPressed: () => Navigator.pop(context, true),
+          child: const Text('Borrar', style: TextStyle(color: Colors.red)),
+        ),
+      ],
+    ),
+  );
+  if (confirm == true) {
+    _service.deleteNote(note.id);
+  }
+},
                   ),
                   onTap: () => _showAddDialog(noteToEdit: note),
                 ),

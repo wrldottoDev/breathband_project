@@ -54,7 +54,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 duration: Duration(milliseconds: 1000),
                 child: Center(
                   child: Image.asset(
-                    'assets/image-logo.png',
+                    'assets/image_logo.png',
                     height: 100,
                     width: 100,
                   ),

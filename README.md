@@ -29,12 +29,12 @@ Diseñar una solución tecnológica que permita:
 
 # 🔧 Tecnologías utilizadas
 
-- **Fronted web:** Astro, html, css, boostrap
+- **Fronted web:** Astro, JS, TailwindCSS
 - **Backend web:** Django
 - **App Móvil:** Flutter
-- **Firmware:** Arduino / C++
-- **Base de datos:**
-
+- **Firmware:** Micropython
+- **Base de datos:** Firebase 
+- **Hardware:** esp32c3, oled 0.96 inch display, max30102
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -8,6 +8,4 @@ class ThemeNotifier extends ChangeNotifier {
     _isDark = value;
     notifyListeners();
   }
-
-  static of(BuildContext context) {}
 }
